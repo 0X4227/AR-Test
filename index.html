@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>AR.js with Responsive Video</title>
+    <title>AR.js with 3D Star</title>
     <!-- Include A-Frame and AR.js -->
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
@@ -27,11 +27,11 @@
     <a-scene embedded arjs vr-mode-ui="enabled: false" renderer="logarithmicDepthBuffer: true">
       <!-- Marker to detect (Hiro marker) -->
       <a-marker preset="hiro">
-        <!-- Responsive video with autoplay and muted attributes -->
-        <a-video src="https://www.w3schools.com/html/mov_bbb.mp4"
-                 width="1.5" height="0.75" position="0 1.5 0"
-                 scale="1 1 1" rotation="0 0 0" autoplay="true" muted="true">
-        </a-video>
+        <!-- Custom star shape -->
+        <a-entity geometry="primitive: circle; segments: 5; radius: 1" 
+                  material="color: yellow; side: double"
+                  position="0 1.5 0" rotation="0 0 0">
+        </a-entity>
       </a-marker>
       <!-- AR Camera with adjustments to prevent zoom -->
       <a-entity camera position="0 0 5" look-controls="enabled: false"

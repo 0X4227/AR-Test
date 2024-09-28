@@ -2,19 +2,35 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR.js with Video Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AR.js with Responsive Video</title>
     <!-- Include A-Frame and AR.js -->
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
+    <style>
+      /* Ensure the scene takes up the full screen */
+      body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      a-scene {
+        width: 100vw;
+        height: 100vh;
+        display: block;
+      }
+    </style>
   </head>
-  <body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs>
+  <body>
+    <a-scene embedded arjs vr-mode-ui="enabled: false">
       <!-- Marker to detect (Hiro marker) -->
       <a-marker preset="hiro">
-        <!-- Display a video instead of an image -->
+        <!-- Display a responsive video -->
         <a-video src="https://www.w3schools.com/html/mov_bbb.mp4" 
-                 width="2" height="1" position="0 1 0"></a-video>
+                 width="2" height="1" position="0 1 0" 
+                 scale="1.5 1.5 1.5" rotation="0 0 0"></a-video>
       </a-marker>
       <!-- AR Camera -->
       <a-entity camera></a-entity>

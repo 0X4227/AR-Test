@@ -27,10 +27,11 @@
     <a-scene embedded arjs vr-mode-ui="enabled: false" renderer="logarithmicDepthBuffer: true">
       <!-- Marker to detect (Hiro marker) -->
       <a-marker preset="hiro">
-        <!-- Display a responsive video with adjusted scale and position -->
-        <a-video src="https://www.w3schools.com/html/mov_bbb.mp4" 
-                 width="1.5" height="0.75" position="0 1.5 0" 
-                 scale="1 1 1" rotation="0 0 0"></a-video>
+        <!-- Responsive video with autoplay and muted attributes -->
+        <a-video src="https://www.w3schools.com/html/mov_bbb.mp4"
+                 width="1.5" height="0.75" position="0 1.5 0"
+                 scale="1 1 1" rotation="0 0 0" autoplay="true" muted="true">
+        </a-video>
       </a-marker>
       <!-- AR Camera with adjustments to prevent zoom -->
       <a-entity camera position="0 0 5" look-controls="enabled: false"
